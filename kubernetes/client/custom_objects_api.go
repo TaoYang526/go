@@ -835,7 +835,7 @@ func (a *CustomObjectsApiService) ListNamespacedCustomObject(ctx context.Context
 func (a *CustomObjectsApiService) PatchClusterCustomObject(ctx context.Context, group string, version string, plural string, name string, body interface{}) (interface{},  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
-		localVarPostBody interface{}
+		//localVarPostBody interface{}
 		localVarFileName string
 		localVarFileBytes []byte
 	 	successPayload  interface{}
@@ -873,7 +873,7 @@ func (a *CustomObjectsApiService) PatchClusterCustomObject(ctx context.Context, 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &body
+	//localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -886,7 +886,7 @@ func (a *CustomObjectsApiService) PatchClusterCustomObject(ctx context.Context, 
 			localVarHeaderParams["authorization"] = key
 		}
 	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, body, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return successPayload, nil, err
 	}
